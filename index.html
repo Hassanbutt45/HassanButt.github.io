@@ -8,24 +8,27 @@
     body {
       margin: 0;
       font-family: Arial, sans-serif;
-      background: #f0f8ff;
-      color: #333;
+      background: #0f172a;
+      color: #f8fafc;
       scroll-behavior: smooth;
+      overflow-x: hidden;
     }
 
     header {
-      background: #1e90ff;
+      background: rgba(15, 23, 42, 0.9);
       color: #fff;
       padding: 20px;
       text-align: center;
       position: sticky;
       top: 0;
       z-index: 1000;
+      backdrop-filter: blur(12px);
     }
 
     header h1 {
       margin: 0;
       font-size: 28px;
+      color: #38bdf8;
     }
 
     nav a {
@@ -33,17 +36,23 @@
       margin: 0 15px;
       text-decoration: none;
       font-weight: bold;
+      transition: 0.3s;
+    }
+    nav a:hover {
+      color: #38bdf8;
     }
 
     section {
       padding: 100px 20px;
       min-height: 100vh;
       text-align: center;
+      position: relative;
+      z-index: 1;
     }
 
     /* Hero */
     #hero {
-      background: linear-gradient(to right, #1e90ff, #005bbb);
+      background: linear-gradient(to right, #1e3a8a, #0f172a);
       color: #fff;
       display: flex;
       justify-content: center;
@@ -54,118 +63,93 @@
     #hero h2 {
       font-size: 48px;
       margin: 0;
+      color: #38bdf8;
     }
 
     #hero p {
       font-size: 20px;
       margin: 15px 0;
+      color: #94a3b8;
     }
 
     #hero a {
-      background: #fff;
-      color: #1e90ff;
+      background: linear-gradient(45deg, #38bdf8, #818cf8);
+      color: #fff;
       padding: 12px 25px;
-      border-radius: 5px;
+      border-radius: 25px;
       text-decoration: none;
       font-weight: bold;
       transition: 0.3s;
     }
 
     #hero a:hover {
-      background: #005bbb;
-      color: #fff;
+      background: #2563eb;
     }
 
     /* About */
     #about {
-      background: #fff;
+      background: #1e293b;
     }
-
     #about h2 {
-      color: #1e90ff;
+      color: #38bdf8;
       font-size: 36px;
       margin-bottom: 20px;
     }
-
     #about p {
       max-width: 800px;
       margin: 0 auto;
       font-size: 18px;
       line-height: 1.8;
+      color: #cbd5e1;
     }
 
     /* Skills */
     #skills {
-      background: #e6f2ff;
+      background: #0f172a;
+      overflow: hidden;
     }
-
     #skills h2 {
-      color: #1e90ff;
+      color: #38bdf8;
       font-size: 36px;
-      margin-bottom: 30px;
+      margin-bottom: 20px;
+      position: relative;
+      z-index: 2;
     }
-
-    .skill-list {
-      display: flex;
-      justify-content: center;
-      gap: 20px;
-      flex-wrap: wrap;
+    #skills p {
+      color: #94a3b8;
+      margin-bottom: 40px;
+      position: relative;
+      z-index: 2;
     }
-
-    .skill {
-      background: #fff;
-      padding: 20px;
-      border-radius: 10px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-      width: 150px;
-      font-weight: bold;
-      opacity: 0;
-      transform: translateY(30px);
-      transition: 1s;
+    #particles {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 1;
     }
 
     /* Contact */
     #contact {
-      background: #fff;
+      background: #1e293b;
     }
-
     #contact h2 {
-      color: #1e90ff;
+      color: #38bdf8;
       font-size: 36px;
       margin-bottom: 20px;
-      opacity: 0;
-      transform: translateY(30px);
-      transition: 1s;
     }
-
     .contact-info {
       font-size: 18px;
       line-height: 2;
-      opacity: 0;
-      transform: translateY(30px);
-      transition: 1s;
     }
-
     .contact-info a {
-      color: #1e90ff;
+      color: #38bdf8;
       text-decoration: none;
       font-weight: bold;
     }
-
     .contact-info a:hover {
       text-decoration: underline;
-    }
-
-    /* Animation show class */
-    .animate {
-      opacity: 0;
-      transform: translateY(30px);
-      transition: 1s;
-    }
-
-    .show {
-      opacity: 1 !important;
-      transform: translateY(0) !important;
     }
   </style>
 </head>
@@ -183,15 +167,15 @@
 
   <!-- Hero -->
   <section id="hero">
-    <h2 class="animate">Hi, I'm Hassan Butt</h2>
-    <p class="animate">A passionate Web Developer</p>
-    <a href="#contact" class="animate">Get in Touch</a>
+    <h2>Hi, I'm Hassan Butt</h2>
+    <p>A passionate Web Developer</p>
+    <a href="#contact">Get in Touch</a>
   </section>
 
   <!-- About -->
   <section id="about">
-    <h2 class="animate">About Me</h2>
-    <p class="animate">
+    <h2>About Me</h2>
+    <p>
       I am a dedicated and enthusiastic web developer who loves building responsive, clean, and user-friendly websites. 
       My journey in web development started with curiosity and has grown into a passion for creating digital experiences 
       that not only look good but also work smoothly. I specialize in front-end technologies like HTML, CSS, and JavaScript, 
@@ -202,50 +186,88 @@
     </p>
   </section>
 
-  <!-- Skills -->
-<section id="skills">
-  <h2 class="animate">My Skills</h2>
-  <div class="skill-list">
-    <div class="skill animate">HTML</div>
-    <div class="skill animate">CSS</div>
-    <div class="skill animate">JavaScript</div>
-    <div class="skill animate">Bootstrap</div>
-    <div class="skill animate">React</div>
-    <div class="skill animate">MS Word</div>
-    <div class="skill animate">MS Excel</div>
-    <div class="skill animate">Power Point</div>
-  </div>
-</section>
+  <!-- Skills with Particle Animation -->
+  <section id="skills">
+    <h2>My Skills</h2>
+    <p>HTML • CSS • JavaScript • React • Bootstrap • Word • Excel • PowerPoint</p>
+    <canvas id="particles"></canvas>
+  </section>
 
   <!-- Contact -->
   <section id="contact">
-    <h2 class="animate">Contact Me</h2>
-    <div class="contact-info animate">
-📧 Email: <a href="mailto:hb6756742@gmail.com">hb6756742@gmail.com</a><br>
-      📱 Phone: <a href="tel:92 3231392451">+92 3231392451</a><br>
-      📷 Instagram: <a href="https://www.instagram.com/hass_an_butt?igsh=MTNkdnlhOWo5d3R5Ng==" target="_blank">Hassanbutt6t9</a>
+    <h2>Contact Me</h2>
+    <div class="contact-info">
+      📧 Email: <a href="mailto:hb6756742@gmail.com">hb6756742@gmail.com</a><br>
+      📱 Phone: <a href="tel:+923231392451">+92 3231392451</a><br>
+      📷 Instagram: <a href="https://www.instagram.com/hass_an_butt" target="_blank">Hassanbutt6t9</a>
     </div>
   </section>
 
   <script>
-    // Scroll animations
-    const animateEls = document.querySelectorAll('.animate, .skill, .contact-info');
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('show');
-        }
+    const canvas = document.getElementById('particles');
+    const ctx = canvas.getContext('2d');
+    canvas.width = document.getElementById("skills").offsetWidth;
+    canvas.height = document.getElementById("skills").offsetHeight;
+
+    const logos = [
+      { src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" },
+      { src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" },
+      { src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" },
+      { src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" },
+      { src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg" },
+      { src: "https://upload.wikimedia.org/wikipedia/commons/8/86/Microsoft_Word_2013-2019_logo.svg" },
+      { src: "https://upload.wikimedia.org/wikipedia/commons/7/7f/Microsoft_Excel_2013-2019_logo.svg" },
+      { src: "https://upload.wikimedia.org/wikipedia/commons/0/0d/Microsoft_Office_PowerPoint_%282013-2019%29.svg" }
+    ];
+
+    let particles = [];
+
+    class Particle {
+      constructor(img, x, y) {
+        this.img = img;
+        this.x = x;
+        this.y = y;
+        this.size = 50;
+        this.vx = (Math.random() - 0.5) * 1.5;
+        this.vy = (Math.random() - 0.5) * 1.5;
+      }
+      draw() {
+        ctx.drawImage(this.img, this.x, this.y, this.size, this.size);
+      }
+      update() {
+        this.x += this.vx;
+        this.y += this.vy;
+        if (this.x < 0 || this.x > canvas.width - this.size) this.vx *= -1;
+        if (this.y < 0 || this.y > canvas.height - this.size) this.vy *= -1;
+        this.draw();
+      }
+    }
+
+    function init() {
+      logos.forEach(logo => {
+        const img = new Image();
+        img.src = logo.src;
+        img.onload = () => {
+          const x = Math.random() * (canvas.width - 50);
+          const y = Math.random() * (canvas.height - 50);
+          particles.push(new Particle(img, x, y));
+        };
       });
-    }, { threshold: 0.2 });
+    }
 
-    animateEls.forEach(el => observer.observe(el));
+    function animate() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      particles.forEach(p => p.update());
+      requestAnimationFrame(animate);
+    }
+
+    init();
+    animate();
+
+    window.addEventListener("resize", () => {
+      canvas.width = document.getElementById("skills").offsetWidth;
+      canvas.height = document.getElementById("skills").offsetHeight;
+    });
   </script>
-
 </body>
 </html>
-
-
-
-
-
-
