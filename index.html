@@ -1,146 +1,242 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Hassan Butt | Portfolio</title>
-<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-<style>
-/* General Styles */
-* {margin: 0; padding: 0; box-sizing: border-box; font-family: 'Roboto', sans-serif;}
-body {background-color: #f0f8ff; color: #333;}
-a {text-decoration: none; color: inherit;}
-button {cursor: pointer; transition: transform 0.3s;}
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hassan Butt | Portfolio</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f0f8ff;
+      color: #333;
+      scroll-behavior: smooth;
+    }
 
-/* Navbar */
-nav {
-  position: fixed; top:0; width:100%; background:#fff; padding:15px 50px; display:flex; justify-content:space-between; align-items:center; box-shadow:0 2px 5px rgba(0,0,0,0.1); z-index:1000;
-}
-nav .logo {font-size:26px; color:#1e90ff; font-weight:bold;}
-nav ul {list-style:none; display:flex; gap:25px;}
-nav ul li a {color:#333; font-weight:500; transition:0.3s;}
-nav ul li a:hover {color:#1e90ff;}
+    header {
+      background: #1e90ff;
+      color: #fff;
+      padding: 20px;
+      text-align: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
 
-/* Hero Section */
-.hero {height:90vh; display:flex; flex-direction:column; justify-content:center; align-items:center; text-align:center; background:#e6f2ff; color:#1e90ff; padding:0 20px;}
-.hero h1 {font-size:48px; margin-bottom:15px; opacity:0; transform: translateY(20px); transition:1s;}
-.hero p {font-size:20px; margin-bottom:25px; opacity:0; transform: translateY(20px); transition:1s;}
-.hero a {background:#1e90ff; color:#fff; padding:12px 30px; border-radius:5px; font-weight:600; transition:0.3s, transform 0.3s;}
-.hero a:hover {background:#005bbb; transform: translateY(-3px);}
+    header h1 {
+      margin: 0;
+      font-size: 28px;
+    }
 
-/* About Section */
-section {padding:80px 50px;}
-#about {display:flex; align-items:center; gap:50px; flex-wrap:wrap; background:#fff;}
-#about img {width:300px; border-radius:15px; opacity:0; transform: translateX(-50px); transition:1s;}
-#about .content {max-width:600px; opacity:0; transform: translateX(50px); transition:1s;}
-#about h2 {font-size:36px; margin-bottom:20px; color:#1e90ff;}
-#about p {font-size:18px; line-height:1.6;}
+    nav a {
+      color: #fff;
+      margin: 0 15px;
+      text-decoration: none;
+      font-weight: bold;
+    }
 
-/* Skills Section */
-#skills {background:#e6f2ff; text-align:center;}
-#skills h2 {font-size:36px; margin-bottom:40px; color:#1e90ff; opacity:0; transform: translateY(20px); transition:1s;}
-.skills-container {display:flex; justify-content:center; flex-wrap:wrap; gap:20px;}
-.skill {background:#fff; padding:20px; border-radius:10px; width:150px; text-align:center; box-shadow:0 2px 5px rgba(0,0,0,0.1); opacity:0; transform: translateY(20px); transition:1s;}
-.skill i {font-size:36px; margin-bottom:10px; color:#1e90ff;}
-.skill:hover {transform: translateY(-5px); box-shadow:0 4px 10px rgba(0,0,0,0.2);}
+    section {
+      padding: 100px 20px;
+      min-height: 100vh;
+      text-align: center;
+    }
 
-/* Contact Section */
-#contact {background:#fff; text-align:center;}
-#contact h2 {font-size:36px; margin-bottom:20px; color:#1e90ff; opacity:0; transform: translateY(20px); transition:1s;}
-#contact p {font-size:18px; margin-bottom:10px;}
-#contact a {color:#1e90ff; transition:0.3s;}
-#contact a:hover {color:#005bbb;}
+    /* Hero */
+    #hero {
+      background: linear-gradient(to right, #1e90ff, #005bbb);
+      color: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    }
 
-/* Footer */
-footer {background:#1e90ff; color:#fff; text-align:center; padding:20px;}
+    #hero h2 {
+      font-size: 48px;
+      margin: 0;
+    }
 
-/* Animation Classes */
-.show {opacity:1 !important; transform:translate(0,0) !important;}
+    #hero p {
+      font-size: 20px;
+      margin: 15px 0;
+    }
 
-/* Responsive */
-@media(max-width:768px){
-  nav ul {flex-direction:column; gap:10px;}
-  #about {flex-direction:column;}
-  #about img {width:250px;}
-}
-</style>
+    #hero a {
+      background: #fff;
+      color: #1e90ff;
+      padding: 12px 25px;
+      border-radius: 5px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    #hero a:hover {
+      background: #005bbb;
+      color: #fff;
+    }
+
+    /* About */
+    #about {
+      background: #fff;
+    }
+
+    #about h2 {
+      color: #1e90ff;
+      font-size: 36px;
+      margin-bottom: 20px;
+    }
+
+    #about p {
+      max-width: 800px;
+      margin: 0 auto;
+      font-size: 18px;
+      line-height: 1.8;
+    }
+
+    /* Skills */
+    #skills {
+      background: #e6f2ff;
+    }
+
+    #skills h2 {
+      color: #1e90ff;
+      font-size: 36px;
+      margin-bottom: 30px;
+    }
+
+    .skill-list {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .skill {
+      background: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      width: 150px;
+      font-weight: bold;
+      opacity: 0;
+      transform: translateY(30px);
+      transition: 1s;
+    }
+
+    /* Contact */
+    #contact {
+      background: #fff;
+    }
+
+    #contact h2 {
+      color: #1e90ff;
+      font-size: 36px;
+      margin-bottom: 20px;
+      opacity: 0;
+      transform: translateY(30px);
+      transition: 1s;
+    }
+
+    .contact-info {
+      font-size: 18px;
+      line-height: 2;
+      opacity: 0;
+      transform: translateY(30px);
+      transition: 1s;
+    }
+
+    .contact-info a {
+      color: #1e90ff;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .contact-info a:hover {
+      text-decoration: underline;
+    }
+
+    /* Animation show class */
+    .animate {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: 1s;
+    }
+
+    .show {
+      opacity: 1 !important;
+      transform: translateY(0) !important;
+    }
+  </style>
 </head>
 <body>
 
-<!-- Navbar -->
-<nav>
-  <div class="logo">Hassan Butt</div>
-  <ul>
-    <li><a href="#about">About</a></li>
-    <li><a href="#skills">Skills</a></li>
-    <li><a href="#contact">Contact</a></li>
-  </ul>
-</nav>
+  <header>
+    <h1>Hassan Butt</h1>
+    <nav>
+      <a href="#hero">Home</a>
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
 
-<!-- Hero Section -->
-<section class="hero">
-  <h1>Hello, I'm Hassan Butt</h1>
-  <p>Front-End Developer | Designer | Freelancer</p>
-  <a href="#contact">Hire Me</a>
-</section>
+  <!-- Hero -->
+  <section id="hero">
+    <h2 class="animate">Hi, I'm Hassan Butt</h2>
+    <p class="animate">A passionate Web Developer</p>
+    <a href="#contact" class="animate">Get in Touch</a>
+  </section>
 
-<!-- About Section -->
-<section id="about">
-    <div class="content animate">
-        <h2>About Me</h2>
-        <p>Hello! I'm Hassan Butt, a passionate web developer with expertise in front-end development, responsive design, and user experience. I create modern, clean, and professional websites that help businesses and individuals showcase their work online.</p>
+  <!-- About -->
+  <section id="about">
+    <h2 class="animate">About Me</h2>
+    <p class="animate">
+      I am a dedicated and enthusiastic web developer who loves building responsive, clean, and user-friendly websites. 
+      My journey in web development started with curiosity and has grown into a passion for creating digital experiences 
+      that not only look good but also work smoothly. I specialize in front-end technologies like HTML, CSS, and JavaScript, 
+      while also learning modern frameworks to stay up-to-date with the latest trends.
+      <br><br>
+      I enjoy solving problems, improving user experience, and bringing ideas to life through code. 
+      My vision is to continuously improve my skills and work on projects that make an impact.
+    </p>
+  </section>
+
+  <!-- Skills -->
+  <section id="skills">
+    <h2 class="animate">My Skills</h2>
+    <div class="skill-list">
+      <div class="skill animate">HTML</div>
+      <div class="skill animate">CSS</div>
+      <div class="skill animate">JavaScript</div>
+      <div class="skill animate">Bootstrap</div>
+      <div class="skill animate">React</div>
     </div>
-</section>
+  </section>
 
+  <!-- Contact -->
+  <section id="contact">
+    <h2 class="animate">Contact Me</h2>
+    <div class="contact-info animate">
+      📧 Email: <a href="mailto:hassanbutt123@example.com">hassanbutt123@example.com</a><br>
+      📱 Phone: <a href="tel:+923001234567">+92 300 1234567</a><br>
+      📷 Instagram: <a href="https://instagram.com/hassanbutt" target="_blank">@hassanbutt</a>
+    </div>
+  </section>
 
-<!-- Skills Section -->
-<section id="skills">
-  <h2 class="animate">My Skills</h2>
-  <div class="skills-container">
-    <div class="skill animate"><i class="fab fa-html5"></i><p>HTML</p></div>
-    <div class="skill animate"><i class="fab fa-css3-alt"></i><p>CSS</p></div>
-    <div class="skill animate"><i class="fab fa-js-square"></i><p>JavaScript</p></div>
-    <div class="skill animate"><i class="fab fa-react"></i><p>React</p></div>
-  </div>
-</section>
+  <script>
+    // Scroll animations
+    const animateEls = document.querySelectorAll('.animate, .skill, .contact-info');
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('show');
+        }
+      });
+    }, { threshold: 0.2 });
 
-<!-- Contact Section -->
-<section id="contact">
-  <h2>Contact Me</h2>
-  <ul>
-    <li>Email: <a href="hb6756742@gmail.com">hb6756742@gmail.com</a></li>
-    <li>Instagram: <a href="https://instagram.com/hassanbutt" target="_blank">@hassanbutt</a></li>
-    <li>Phone: <a href="tel:+92 323 1392451">+92 323 1392451</a></li>
-  </ul>
-</section>
-
-<!-- Footer -->
-<footer>
-  &copy; 2025 Hassan Butt. All Rights Reserved.
-</footer>
-
-<script>
-// Smooth scrolling
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-  anchor.addEventListener('click', function(e){
-    e.preventDefault();
-    document.querySelector(this.getAttribute('href')).scrollIntoView({behavior:'smooth'});
-  });
-});
-
-// Scroll animations
-const animateElements = document.querySelectorAll('.animate, .hero h1, .hero p, .hero a');
-const observer = new IntersectionObserver(entries => {
-  entries.forEach(entry => {
-    if(entry.isIntersecting){
-      entry.target.classList.add('show');
-    }
-  });
-}, {threshold: 0.2});
-animateElements.forEach(el => observer.observe(el));
-</script>
+    animateEls.forEach(el => observer.observe(el));
+  </script>
 
 </body>
 </html>
-
