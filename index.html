@@ -151,19 +151,61 @@
     .contact-info a:hover {
       text-decoration: underline;
     }
+
+    /* Navbar */
+header {
+  background: rgba(15, 23, 42, 0.9);
+  padding: 15px 40px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  backdrop-filter: blur(12px);
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+  color: #38bdf8;
+}
+
+nav {
+  display: flex;
+  gap: 25px; /* links ka space barabar */
+}
+
+nav a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  transition: 0.3s;
+  font-size: 16px;
+}
+
+nav a:hover {
+  color: #38bdf8;
+}
+
   </style>
 </head>
 <body>
 
   <header>
-    <h1>Hassan Butt</h1>
+  <div class="navbar">
+    <div class="logo">Hassan Butt</div>
     <nav>
       <a href="#hero">Home</a>
       <a href="#about">About</a>
       <a href="#skills">Skills</a>
       <a href="#contact">Contact</a>
     </nav>
-  </header>
+  </div>
+</header>
 
   <!-- Hero -->
   <section id="hero">
