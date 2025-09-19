@@ -4,220 +4,135 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Hassan Butt | Portfolio</title>
+
+  <!-- Font Awesome + Devicons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
+
   <style>
     body {
       margin: 0;
       font-family: Arial, sans-serif;
-      background: #0f172a;
-      color: #f8fafc;
+      background: #0d1117;
+      color: #f0f8ff;
       scroll-behavior: smooth;
       overflow-x: hidden;
     }
 
+    /* Navbar */
     header {
-      background: rgba(15, 23, 42, 0.9);
+      background: rgba(30, 144, 255, 0.9);
       color: #fff;
-      padding: 20px;
-      text-align: center;
+      padding: 15px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
       position: sticky;
       top: 0;
       z-index: 1000;
-      backdrop-filter: blur(12px);
+      backdrop-filter: blur(8px);
     }
+    header h1 { margin: 0; font-size: 22px; }
+    nav a { color: #fff; margin: 0 10px; text-decoration: none; font-weight: bold; }
+    nav a:hover { text-decoration: underline; }
 
-    header h1 {
-      margin: 0;
-      font-size: 28px;
-      color: #38bdf8;
-    }
+    /* Sections */
+    section { padding: 80px 20px; text-align: center; position: relative; }
 
-    nav a {
-      color: #fff;
-      margin: 0 15px;
-      text-decoration: none;
-      font-weight: bold;
-      transition: 0.3s;
-    }
-    nav a:hover {
-      color: #38bdf8;
-    }
-
-    section {
-      padding: 100px 20px;
+    /* Home */
+    #home {
       min-height: 100vh;
-      text-align: center;
-      position: relative;
-      z-index: 1;
+      display: flex; justify-content: center; align-items: center; flex-direction: column;
+      color: white; position: relative; overflow: hidden;
     }
-
-    /* Hero */
-    #hero {
-      background: linear-gradient(to right, #1e3a8a, #0f172a);
-      color: #fff;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      flex-direction: column;
+    #particles-js { position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; }
+    #home h1, #home p { animation: floatHome 4s ease-in-out infinite; }
+    @keyframes floatHome {
+      0%,100%{ transform: translateY(0); }
+      50%{ transform: translateY(-10px); }
     }
-
-    #hero h2 {
-      font-size: 48px;
-      margin: 0;
-      color: #38bdf8;
+    #home h1 { font-size: 50px; margin-bottom: 20px; }
+    #home p { font-size: 22px; margin-bottom: 30px; }
+    #home .btn {
+      background: white; color: #1e90ff; padding: 12px 25px; border-radius: 25px;
+      text-decoration: none; font-weight: bold; transition: 0.3s;
     }
-
-    #hero p {
-      font-size: 20px;
-      margin: 15px 0;
-      color: #94a3b8;
-    }
-
-    #hero a {
-      background: linear-gradient(45deg, #38bdf8, #818cf8);
-      color: #fff;
-      padding: 12px 25px;
-      border-radius: 25px;
-      text-decoration: none;
-      font-weight: bold;
-      transition: 0.3s;
-    }
-
-    #hero a:hover {
-      background: #2563eb;
-    }
+    #home .btn:hover { background: #005bbb; color: white; }
 
     /* About */
     #about {
-      background: #1e293b;
+      background: rgba(255,255,255,0.05); border-radius: 15px; margin: 40px auto;
+      max-width: 900px; padding: 60px 20px;
     }
-    #about h2 {
-      color: #38bdf8;
-      font-size: 36px;
-      margin-bottom: 20px;
-    }
-    #about p {
-      max-width: 800px;
-      margin: 0 auto;
-      font-size: 18px;
-      line-height: 1.8;
-      color: #cbd5e1;
+    #about h2 { color: #1e90ff; font-size: 36px; margin-bottom: 20px; animation: floatText 6s ease-in-out infinite; }
+    #about p { font-size: 18px; line-height: 1.8; animation: floatText 6s ease-in-out infinite; }
+    @keyframes floatText {
+      0%,100%{ transform: translateY(0); }
+      50%{ transform: translateY(-5px); }
     }
 
     /* Skills */
-    #skills {
-      background: #0f172a;
-      overflow: hidden;
+    #skills h2 { color: #1e90ff; font-size: 36px; margin-bottom: 30px; animation: floatText 6s ease-in-out infinite; }
+    .skill-list {
+      display: flex; justify-content: center; gap: 20px; flex-wrap: wrap;
     }
-    #skills h2 {
-      color: #38bdf8;
-      font-size: 36px;
-      margin-bottom: 20px;
-      position: relative;
-      z-index: 2;
+    .skill {
+      background: rgba(255,255,255,0.1); padding: 20px; border-radius: 10px;
+      width: 150px; font-weight: bold; display: flex; flex-direction: column; align-items: center;
+      transition: transform 0.6s ease, background 0.3s;
+      animation: pulse 2s infinite ease-in-out;
     }
-    #skills p {
-      color: #94a3b8;
-      margin-bottom: 40px;
-      position: relative;
-      z-index: 2;
-    }
-    #particles {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      z-index: 1;
+    .skill i { font-size: 40px; margin-bottom: 10px; color: #1e90ff; }
+    .skill:hover { background: rgba(30,144,255,0.2); }
+    @keyframes pulse {
+      0%,100% { transform: scale(1); }
+      50% { transform: scale(1.1); }
     }
 
     /* Contact */
-    #contact {
-      background: #1e293b;
-    }
-    #contact h2 {
-      color: #38bdf8;
-      font-size: 36px;
-      margin-bottom: 20px;
-    }
-    .contact-info {
-      font-size: 18px;
-      line-height: 2;
-    }
-    .contact-info a {
-      color: #38bdf8;
-      text-decoration: none;
-      font-weight: bold;
-    }
-    .contact-info a:hover {
-      text-decoration: underline;
-    }
+    #contact h2 { color: #1e90ff; font-size: 32px; margin-bottom: 15px; animation: floatText 6s ease-in-out infinite; }
+    .contact-info { font-size: 16px; line-height: 2; opacity: 0; transform: translateY(50px); transition: all 1s ease; animation: floatText 6s ease-in-out infinite; }
+    .contact-info.show { opacity: 1; transform: translateY(0); }
+    .contact-info p { margin: 10px 0; }
+    .contact-info i { color: #1e90ff; margin-right: 8px; transition: transform 0.3s; }
+    .contact-info i:hover { transform: scale(1.3); }
+    .contact-info a { color: #1e90ff; font-weight: bold; text-decoration: none; }
+    .contact-info a:hover { text-decoration: underline; }
 
-    /* Navbar */
-header {
-  background: rgba(15, 23, 42, 0.9);
-  padding: 15px 40px;
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-  backdrop-filter: blur(12px);
-}
-
-.navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.logo {
-  font-size: 24px;
-  font-weight: bold;
-  color: #38bdf8;
-}
-
-nav {
-  display: flex;
-  gap: 25px; /* links ka space barabar */
-}
-
-nav a {
-  color: #fff;
-  text-decoration: none;
-  font-weight: 600;
-  transition: 0.3s;
-  font-size: 16px;
-}
-
-nav a:hover {
-  color: #38bdf8;
-}
-
+    /* Intersection Animations */
+    .fade-zoom { opacity: 0; transform: scale(0.8); transition: all 1s ease; }
+    .fade-zoom.show { opacity: 1; transform: scale(1); }
+    .slide-left { opacity: 0; transform: translateX(-100px); transition: all 1s ease; }
+    .slide-left.show { opacity: 1; transform: translateX(0); }
+    .slide-right { opacity: 0; transform: translateX(100px); transition: all 1s ease; }
+    .slide-right.show { opacity: 1; transform: translateX(0); }
   </style>
 </head>
 <body>
 
+  <!-- Navbar -->
   <header>
-  <div class="navbar">
-    <div class="logo">Hassan Butt</div>
+    <h1>Hassan Butt</h1>
     <nav>
-      <a href="#hero">Home</a>
+      <a href="#home">Home</a>
       <a href="#about">About</a>
       <a href="#skills">Skills</a>
       <a href="#contact">Contact</a>
     </nav>
-  </div>
-</header>
+  </header>
 
-  <!-- Hero -->
-  <section id="hero">
-    <h2>Hi, I'm Hassan Butt</h2>
-    <p>A passionate Web Developer</p>
-    <a href="#contact">Get in Touch</a>
+  <!-- Home -->
+  <section id="home">
+    <div id="particles-js"></div>
+    <h1 class="fade-zoom">Hi, I'm Hassan Butt</h1>
+    <p class="fade-zoom">A passionate Web Developer</p>
+    <a href="#contact" class="btn fade-zoom">Hire Me</a>
   </section>
 
   <!-- About -->
   <section id="about">
-    <h2>About Me</h2>
-    <p>
+    <h2 class="slide-left">About Me</h2>
+    <p class="slide-right">
       I am a dedicated and enthusiastic web developer who loves building responsive, clean, and user-friendly websites. 
       My journey in web development started with curiosity and has grown into a passion for creating digital experiences 
       that not only look good but also work smoothly. I specialize in front-end technologies like HTML, CSS, and JavaScript, 
@@ -228,88 +143,66 @@ nav a:hover {
     </p>
   </section>
 
-  <!-- Skills with Particle Animation -->
+  <!-- Skills -->
   <section id="skills">
-    <h2>My Skills</h2>
-    <p>HTML • CSS • JavaScript • React • Bootstrap • Word • Excel • PowerPoint</p>
-    <canvas id="particles"></canvas>
-  </section>
-
-  <!-- Contact -->
-  <section id="contact">
-    <h2>Contact Me</h2>
-    <div class="contact-info">
-      📧 Email: <a href="mailto:hb6756742@gmail.com">hb6756742@gmail.com</a><br>
-      📱 Phone: <a href="tel:+923231392451">+92 3231392451</a><br>
-      📷 Instagram: <a href="https://www.instagram.com/hass_an_butt" target="_blank">Hassanbutt6t9</a>
+    <h2 class="fade-zoom">My Skills</h2>
+    <div class="skill-list">
+      <div class="skill"><i class="devicon-html5-plain colored"></i>HTML</div>
+      <div class="skill"><i class="devicon-css3-plain colored"></i>CSS</div>
+      <div class="skill"><i class="devicon-javascript-plain colored"></i>JavaScript</div>
+      <div class="skill"><i class="devicon-bootstrap-plain colored"></i>Bootstrap</div>
+      <div class="skill"><i class="devicon-react-original colored"></i>React</div>
+      <div class="skill"><i class="fa-solid fa-file-word" style="color:#2b579a;"></i>MS Word</div>
+      <div class="skill"><i class="fa-solid fa-file-excel" style="color:#217346;"></i>MS Excel</div>
+      <div class="skill"><i class="fa-solid fa-file-powerpoint" style="color:#d24726;"></i>PowerPoint</div>
     </div>
   </section>
 
+ <!-- Contact -->
+<section id="contact" style="background: linear-gradient(135deg, #1e90ff, #005bbb); border-radius: 15px; padding: 60px 20px; margin: 40px auto; max-width: 900px; color: #fff;">
+  <h2 class="fade-zoom" style="margin-bottom: 30px; color:#000000;">Contact Me</h2>
+  <div class="contact-info" style="display: flex; flex-direction: column; gap: 20px; align-items: center;">
+    <p style="background: rgba(255,255,255,0.1); padding: 15px 25px; border-radius: 12px; width: 100%; max-width: 500px; display: flex; align-items: center; justify-content: center; transition: 0.3s;">
+      <i class="fa-solid fa-envelope" style="margin-right:10px; color:#fff;"></i> 
+      <a href="mailto:hb6756742@gmail.com" style="color:#fff; text-decoration:none; font-weight:bold;">hb6756742@gmail.com</a>
+    </p>
+    <p style="background: rgba(255,255,255,0.1); padding: 15px 25px; border-radius: 12px; width: 100%; max-width: 500px; display: flex; align-items: center; justify-content: center; transition: 0.3s;">
+      <i class="fa-solid fa-phone" style="margin-right:10px; color:#fff;"></i> 
+      <a href="tel:923231392451" style="color:#fff; text-decoration:none; font-weight:bold;">+92 323 1392451</a>
+    </p>
+    <p style="background: rgba(255,255,255,0.1); padding: 15px 25px; border-radius: 12px; width: 100%; max-width: 500px; display: flex; align-items: center; justify-content: center; transition: 0.3s;">
+      <i class="fa-brands fa-instagram" style="margin-right:10px; color:#fff;"></i> 
+      <a href="https://www.instagram.com/hass_an_butt" target="_blank" style="color:#fff; text-decoration:none; font-weight:bold;">Hassanbutt6t9</a>
+    </p>
+  </div>
+</section>
+
+
+  <!-- JS for animations -->
   <script>
-    const canvas = document.getElementById('particles');
-    const ctx = canvas.getContext('2d');
-    canvas.width = document.getElementById("skills").offsetWidth;
-    canvas.height = document.getElementById("skills").offsetHeight;
+    document.addEventListener("DOMContentLoaded", () => {
+      const observers = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) entry.target.classList.add('show');
+        });
+      }, { threshold: 0.2 });
 
-    const logos = [
-      { src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" },
-      { src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" },
-      { src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" },
-      { src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" },
-      { src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg" },
-      { src: "https://upload.wikimedia.org/wikipedia/commons/8/86/Microsoft_Word_2013-2019_logo.svg" },
-      { src: "https://upload.wikimedia.org/wikipedia/commons/7/7f/Microsoft_Excel_2013-2019_logo.svg" },
-      { src: "https://upload.wikimedia.org/wikipedia/commons/0/0d/Microsoft_Office_PowerPoint_%282013-2019%29.svg" }
-    ];
-
-    let particles = [];
-
-    class Particle {
-      constructor(img, x, y) {
-        this.img = img;
-        this.x = x;
-        this.y = y;
-        this.size = 50;
-        this.vx = (Math.random() - 0.5) * 1.5;
-        this.vy = (Math.random() - 0.5) * 1.5;
-      }
-      draw() {
-        ctx.drawImage(this.img, this.x, this.y, this.size, this.size);
-      }
-      update() {
-        this.x += this.vx;
-        this.y += this.vy;
-        if (this.x < 0 || this.x > canvas.width - this.size) this.vx *= -1;
-        if (this.y < 0 || this.y > canvas.height - this.size) this.vy *= -1;
-        this.draw();
-      }
-    }
-
-    function init() {
-      logos.forEach(logo => {
-        const img = new Image();
-        img.src = logo.src;
-        img.onload = () => {
-          const x = Math.random() * (canvas.width - 50);
-          const y = Math.random() * (canvas.height - 50);
-          particles.push(new Particle(img, x, y));
-        };
-      });
-    }
-
-    function animate() {
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
-      particles.forEach(p => p.update());
-      requestAnimationFrame(animate);
-    }
-
-    init();
-    animate();
-
-    window.addEventListener("resize", () => {
-      canvas.width = document.getElementById("skills").offsetWidth;
-      canvas.height = document.getElementById("skills").offsetHeight;
+      document.querySelectorAll('.fade-zoom, .slide-left, .slide-right, .skill, .contact-info').forEach(el => observers.observe(el));
     });
   </script>
+
+  <!-- Particles.js only for Home -->
+  <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+  <script>
+    particlesJS("particles-js", {
+      "particles": {
+        "number": { "value": 60 },
+        "size": { "value": 3 },
+        "move": { "speed": 1.5 },
+        "line_linked": { "enable": true, "color": "#1e90ff" }
+      }
+    });
+  </script>
+
 </body>
 </html>
