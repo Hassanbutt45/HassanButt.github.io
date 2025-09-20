@@ -13,15 +13,15 @@
     body {
       margin: 0;
       font-family: Arial, sans-serif;
-      background: #0d1117;
-      color: #f0f8ff;
+      background: #1f1f1f; /* Dark gray background */
+      color: #e0e0e0; /* Light gray text */
       scroll-behavior: smooth;
       overflow-x: hidden;
     }
 
     /* Navbar */
     header {
-      background: rgba(30, 144, 255, 0.9);
+      background: #4a90e2; /* Soft blue */
       color: #fff;
       padding: 15px 20px;
       display: flex;
@@ -34,7 +34,7 @@
     }
     header h1 { margin: 0; font-size: 22px; }
     nav a { color: #fff; margin: 0 10px; text-decoration: none; font-weight: bold; }
-    nav a:hover { text-decoration: underline; }
+    nav a:hover { color: #dcdcdc; text-decoration: underline; }
 
     /* Sections */
     section { padding: 80px 20px; text-align: center; position: relative; }
@@ -43,69 +43,80 @@
     #home {
       min-height: 100vh;
       display: flex; justify-content: center; align-items: center; flex-direction: column;
-      color: white; position: relative; overflow: hidden;
+      position: relative; overflow: hidden;
     }
     #particles-js { position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; }
-    #home h1, #home p { animation: floatHome 4s ease-in-out infinite; }
-    @keyframes floatHome {
-      0%,100%{ transform: translateY(0); }
-      50%{ transform: translateY(-10px); }
-    }
-    #home h1 { font-size: 50px; margin-bottom: 20px; }
-    #home p { font-size: 22px; margin-bottom: 30px; }
+    #home h1 { font-size: 50px; margin-bottom: 20px; color: #4a90e2; }
+    #home p { font-size: 22px; margin-bottom: 30px; color: #e0e0e0; }
     #home .btn {
-      background: white; color: #1e90ff; padding: 12px 25px; border-radius: 25px;
+      background: #4a90e2; color: #fff; padding: 12px 25px; border-radius: 25px;
       text-decoration: none; font-weight: bold; transition: 0.3s;
     }
-    #home .btn:hover { background: #005bbb; color: white; }
+    #home .btn:hover { background: #dcdcdc; color: #1f1f1f; }
 
     /* About */
     #about {
       background: rgba(255,255,255,0.05); border-radius: 15px; margin: 40px auto;
       max-width: 900px; padding: 60px 20px;
     }
-    #about h2 { color: #1e90ff; font-size: 36px; margin-bottom: 20px; animation: floatText 6s ease-in-out infinite; }
-    #about p { font-size: 18px; line-height: 1.8; animation: floatText 6s ease-in-out infinite; }
-    @keyframes floatText {
-      0%,100%{ transform: translateY(0); }
-      50%{ transform: translateY(-5px); }
-    }
+    #about h2 { color: #4a90e2; font-size: 36px; margin-bottom: 20px; }
+    #about p { font-size: 18px; line-height: 1.8; color: #e0e0e0; }
 
     /* Skills */
-    #skills h2 { color: #1e90ff; font-size: 36px; margin-bottom: 30px; animation: floatText 6s ease-in-out infinite; }
+    #skills { background: #2a2a36; color: #e0e0e0; border-radius: 15px; margin: 40px auto; max-width: 900px; text-align: center; padding: 60px 20px;}
+    #skills h2 { color: #4a90e2; font-size: 36px; margin-bottom: 40px; }
     .skill-list {
-      display: flex; justify-content: center; gap: 20px; flex-wrap: wrap;
+      display: flex; justify-content: center; flex-wrap: wrap; gap: 20px;
     }
     .skill {
-      background: rgba(255,255,255,0.1); padding: 20px; border-radius: 10px;
-      width: 150px; font-weight: bold; display: flex; flex-direction: column; align-items: center;
-      transition: transform 0.6s ease, background 0.3s;
-      animation: pulse 2s infinite ease-in-out;
+      background: rgba(255,255,255,0.05); padding: 20px; border-radius: 10px; width:150px;
+      font-weight:bold; display:flex; flex-direction:column; align-items:center; transition: transform 0.3s, background 0.3s;
     }
-    .skill i { font-size: 40px; margin-bottom: 10px; color: #1e90ff; }
-    .skill:hover { background: rgba(30,144,255,0.2); }
-    @keyframes pulse {
-      0%,100% { transform: scale(1); }
-      50% { transform: scale(1.1); }
+    .skill i { font-size: 40px; margin-bottom: 10px; color: #4a90e2; }
+    .skill:hover { background: rgba(220,220,220,0.1); }
+
+    /* Projects */
+    #projects { background: #2a2a36; border-radius: 15px; margin: 40px auto; max-width: 900px; padding:80px 20px; color:#e0e0e0; }
+    #projects h2 { color: #4a90e2; margin-bottom:50px; font-size:42px; font-weight:bold; }
+    .project-list {
+      display: flex; justify-content: center; flex-wrap: wrap; gap: 20px;
     }
+    .project {
+      position: relative; width: 250px; height: 180px; border-radius:12px; overflow: hidden;
+      transition: transform 0.3s, box-shadow 0.3s;
+      display: flex; align-items:flex-end;
+      background-size: cover;
+      background-position: center;
+    }
+    .project:hover { transform: scale(1.05); box-shadow: 0 10px 20px rgba(74,144,226,0.5); }
+    .project div {
+      background: rgba(0,0,0,0.5); padding:10px; width:100%; text-align:center; border-radius:0 0 12px 12px;
+    }
+    .project h3 { margin:0 0 8px 0; font-size:18px; font-weight:bold; }
+    .project a {
+      padding:8px 16px; background:#4a90e2; color:#fff; border-radius:8px; text-decoration:none; font-size:15px; font-weight:bold; transition:0.3s;
+    }
+    .project a:hover { background:#dcdcdc; color:#1f1f1f; }
 
     /* Contact */
-    #contact h2 { color: #1e90ff; font-size: 32px; margin-bottom: 15px; animation: floatText 6s ease-in-out infinite; }
-    .contact-info { font-size: 16px; line-height: 2; opacity: 0; transform: translateY(50px); transition: all 1s ease; animation: floatText 6s ease-in-out infinite; }
-    .contact-info.show { opacity: 1; transform: translateY(0); }
-    .contact-info p { margin: 10px 0; }
-    .contact-info i { color: #1e90ff; margin-right: 8px; transition: transform 0.3s; }
-    .contact-info i:hover { transform: scale(1.3); }
-    .contact-info a { color: #1e90ff; font-weight: bold; text-decoration: none; }
-    .contact-info a:hover { text-decoration: underline; }
+    #contact { background: #4a90e2; border-radius: 15px; padding: 60px 20px; margin: 40px auto; max-width: 900px; color: #fff; }
+    #contact h2 { margin-bottom:30px; }
+    .contact-info { display:flex; flex-direction: column; gap: 20px; align-items: center; }
+    .contact-info p { background: rgba(255,255,255,0.1); padding:15px 25px; border-radius:12px; width:100%; max-width:500px; display:flex; align-items:center; justify-content:center; transition:0.3s; }
+    .contact-info i { margin-right:10px; color:#fff; }
+    .contact-info a { color:#fff; font-weight:bold; text-decoration:none; }
+    .contact-info a:hover { color:#1f1f1f; }
 
-    /* Intersection Animations */
-    .fade-zoom { opacity: 0; transform: scale(0.8); transition: all 1s ease; }
-    .fade-zoom.show { opacity: 1; transform: scale(1); }
-    .slide-left { opacity: 0; transform: translateX(-100px); transition: all 1s ease; }
-    .slide-left.show { opacity: 1; transform: translateX(0); }
-    .slide-right { opacity: 0; transform: translateX(100px); transition: all 1s ease; }
-    .slide-right.show { opacity: 1; transform: translateX(0); }
+    /* Animations */
+    @keyframes floatHome { 0%,100%{ transform: translateY(0); } 50%{ transform: translateY(-10px); } }
+    @keyframes pulse { 0%,100%{ transform: scale(1); } 50%{ transform: scale(1.05); } }
+
+    .fade-zoom { opacity:0; transform: scale(0.8); transition: all 0.8s ease; }
+    .fade-zoom.show { opacity:1; transform: scale(1); }
+    .slide-left { opacity:0; transform: translateX(-100px); transition: all 1s ease; }
+    .slide-left.show { opacity:1; transform: translateX(0); }
+    .slide-right { opacity:0; transform: translateX(100px); transition: all 1s ease; }
+    .slide-right.show { opacity:1; transform: translateX(0); }
   </style>
 </head>
 <body>
@@ -117,6 +128,7 @@
       <a href="#home">Home</a>
       <a href="#about">About</a>
       <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
       <a href="#contact">Contact</a>
     </nav>
   </header>
@@ -143,63 +155,104 @@
     </p>
   </section>
 
-  <!-- Skills -->
-  <section id="skills">
-    <h2 class="fade-zoom">My Skills</h2>
-    <div class="skill-list">
-      <div class="skill"><i class="devicon-html5-plain colored"></i>HTML</div>
-      <div class="skill"><i class="devicon-css3-plain colored"></i>CSS</div>
-      <div class="skill"><i class="devicon-javascript-plain colored"></i>JavaScript</div>
-      <div class="skill"><i class="devicon-bootstrap-plain colored"></i>Bootstrap</div>
-      <div class="skill"><i class="devicon-react-original colored"></i>React</div>
-      <div class="skill"><i class="fa-solid fa-file-word" style="color:#2b579a;"></i>MS Word</div>
-      <div class="skill"><i class="fa-solid fa-file-excel" style="color:#217346;"></i>MS Excel</div>
-      <div class="skill"><i class="fa-solid fa-file-powerpoint" style="color:#d24726;"></i>PowerPoint</div>
-    </div>
-  </section>
+ <section id="skills">
+  <h2 class="fade-zoom">My Skills</h2>
+  <div class="skill-list" style="display:flex; justify-content:center; flex-wrap:wrap; gap:20px;">
 
- <!-- Contact -->
-<section id="contact" style="background: linear-gradient(135deg, #1e90ff, #005bbb); border-radius: 15px; padding: 60px 20px; margin: 40px auto; max-width: 900px; color: #fff;">
-  <h2 class="fade-zoom" style="margin-bottom: 30px; color:#000000;">Contact Me</h2>
-  <div class="contact-info" style="display: flex; flex-direction: column; gap: 20px; align-items: center;">
-    <p style="background: rgba(255,255,255,0.1); padding: 15px 25px; border-radius: 12px; width: 100%; max-width: 500px; display: flex; align-items: center; justify-content: center; transition: 0.3s;">
-      <i class="fa-solid fa-envelope" style="margin-right:10px; color:#fff;"></i> 
-      <a href="mailto:hb6756742@gmail.com" style="color:#fff; text-decoration:none; font-weight:bold;">hb6756742@gmail.com</a>
-    </p>
-    <p style="background: rgba(255,255,255,0.1); padding: 15px 25px; border-radius: 12px; width: 100%; max-width: 500px; display: flex; align-items: center; justify-content: center; transition: 0.3s;">
-      <i class="fa-solid fa-phone" style="margin-right:10px; color:#fff;"></i> 
-      <a href="tel:923231392451" style="color:#fff; text-decoration:none; font-weight:bold;">+92 323 1392451</a>
-    </p>
-    <p style="background: rgba(255,255,255,0.1); padding: 15px 25px; border-radius: 12px; width: 100%; max-width: 500px; display: flex; align-items: center; justify-content: center; transition: 0.3s;">
-      <i class="fa-brands fa-instagram" style="margin-right:10px; color:#fff;"></i> 
-      <a href="https://www.instagram.com/hass_an_butt" target="_blank" style="color:#fff; text-decoration:none; font-weight:bold;">Hassanbutt6t9</a>
-    </p>
+    <!-- HTML -->
+    <div class="skill" style="background: rgba(255,255,255,0.05); padding:20px; border-radius:10px; width:150px; font-weight:bold; display:flex; flex-direction:column; align-items:center; transition: transform 0.3s, background 0.3s;">
+      <i class="devicon-html5-plain" style="color:#e34f26; font-size:40px; margin-bottom:10px;"></i>
+      HTML
+    </div>
+
+    <!-- CSS -->
+    <div class="skill" style="background: rgba(255,255,255,0.05); padding:20px; border-radius:10px; width:150px; font-weight:bold; display:flex; flex-direction:column; align-items:center; transition: transform 0.3s, background 0.3s;">
+      <i class="devicon-css3-plain" style="color:#1572B6; font-size:40px; margin-bottom:10px;"></i>
+      CSS
+    </div>
+
+    <!-- JavaScript -->
+    <div class="skill" style="background: rgba(255,255,255,0.05); padding:20px; border-radius:10px; width:150px; font-weight:bold; display:flex; flex-direction:column; align-items:center; transition: transform 0.3s, background 0.3s;">
+      <i class="devicon-javascript-plain" style="color:#F7DF1E; font-size:40px; margin-bottom:10px;"></i>
+      JavaScript
+    </div>
+
+    <!-- Bootstrap -->
+    <div class="skill" style="background: rgba(255,255,255,0.05); padding:20px; border-radius:10px; width:150px; font-weight:bold; display:flex; flex-direction:column; align-items:center; transition: transform 0.3s, background 0.3s;">
+      <i class="devicon-bootstrap-plain" style="color:#7952B3; font-size:40px; margin-bottom:10px;"></i>
+      Bootstrap
+    </div>
+
+    <!-- React -->
+    <div class="skill" style="background: rgba(255,255,255,0.05); padding:20px; border-radius:10px; width:150px; font-weight:bold; display:flex; flex-direction:column; align-items:center; transition: transform 0.3s, background 0.3s;">
+      <i class="devicon-react-original" style="color:#61DAFB; font-size:40px; margin-bottom:10px;"></i>
+      React
+    </div>
+
+    <!-- MS Word -->
+    <div class="skill" style="background: rgba(255,255,255,0.05); padding:20px; border-radius:10px; width:150px; font-weight:bold; display:flex; flex-direction:column; align-items:center; transition: transform 0.3s, background 0.3s;">
+      <i class="fa-solid fa-file-word" style="color:#2B579A; font-size:40px; margin-bottom:10px;"></i>
+      MS Word
+    </div>
+
+    <!-- MS Excel -->
+    <div class="skill" style="background: rgba(255,255,255,0.05); padding:20px; border-radius:10px; width:150px; font-weight:bold; display:flex; flex-direction:column; align-items:center; transition: transform 0.3s, background 0.3s;">
+      <i class="fa-solid fa-file-excel" style="color:#217346; font-size:40px; margin-bottom:10px;"></i>
+      MS Excel
+    </div>
+
+    <!-- PowerPoint -->
+    <div class="skill" style="background: rgba(255,255,255,0.05); padding:20px; border-radius:10px; width:150px; font-weight:bold; display:flex; flex-direction:column; align-items:center; transition: transform 0.3s, background 0.3s;">
+      <i class="fa-solid fa-file-powerpoint" style="color:#D24726; font-size:40px; margin-bottom:10px;"></i>
+      PowerPoint
+    </div>
+
   </div>
 </section>
 
+
+  <!-- Projects -->
+  <section id="projects">
+    <h2>My Projects</h2>
+    <div class="project-list">
+      <div class="project" style="background: url('https://th.bing.com/th/id/OIP.PHKnNOGr47FlyHPogHGp7gHaEJ?w=324&h=182&c=7&r=0&o=7&pid=1.7&rm=3') no-repeat center/cover;">
+        <div>
+          <h3>Cosmic Discoveries</h3>
+          <a href="https://hassanbutt45.github.io/Cosmic-Discoveries/" target="_blank">View Project</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact">
+   <h2 class="fade-zoom" style="color: black;">Contact Me</h2>
+    <div class="contact-info">
+      <p><i class="fa-solid fa-envelope"></i><a href="mailto:hb6756742@gmail.com">hb6756742@gmail.com</a></p>
+      <p><i class="fa-solid fa-phone"></i><a href="tel:923231392451">+92 323 1392451</a></p>
+      <p><i class="fa-brands fa-instagram"></i><a href="https://www.instagram.com/hass_an_butt" target="_blank">Hassanbutt6t9</a></p>
+    </div>
+  </section>
 
   <!-- JS for animations -->
   <script>
     document.addEventListener("DOMContentLoaded", () => {
       const observers = new IntersectionObserver(entries => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) entry.target.classList.add('show');
-        });
+        entries.forEach(entry => { if(entry.isIntersecting) entry.target.classList.add('show'); });
       }, { threshold: 0.2 });
-
       document.querySelectorAll('.fade-zoom, .slide-left, .slide-right, .skill, .contact-info').forEach(el => observers.observe(el));
     });
   </script>
 
-  <!-- Particles.js only for Home -->
+  <!-- Particles.js -->
   <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
   <script>
     particlesJS("particles-js", {
       "particles": {
-        "number": { "value": 60 },
+        "number": { "value": 50 },
         "size": { "value": 3 },
         "move": { "speed": 1.5 },
-        "line_linked": { "enable": true, "color": "#1e90ff" }
+        "line_linked": { "enable": true, "color": "#4a90e2" }
       }
     });
   </script>
